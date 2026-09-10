@@ -13,8 +13,7 @@
 #include <iostream>
 #include <string>
 #include <exception>
-#include "Form.hpp"
-
+#include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -51,6 +50,7 @@ public:
     /* Member functions */
     void increase();
     void decrease();
-    void signForm(Form& form);
+    void signForm(AForm& form);
+    void executeForm(AForm const & form);
     
 };

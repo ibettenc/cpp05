@@ -17,6 +17,7 @@ int main()
     try 
     {
         Bureaucrat b1("Jules", 5);
+        //----- OLD TESTS -----//
         // Bureaucrat b2("Bob", 151); // should print an error
         // Bureaucrat b3("Lucia", 0); // should print an error
 
@@ -36,14 +37,9 @@ int main()
         // b4.increase();
         // std::cout << b4 << std::endl;
 
+        //----- NEW TESTS -----//
         Form f1("form1", 5, 5);
         Form f2("form2", 1, 1);
-        // Form f3("f3", 0, 1); // should print an error
-        // Form f4("f4", 151, 1); // should print an error
-        // Form f5("f5", 1, 0); // should print an error
-        // Form f6("f6", 1, 151); // should print an error
-        // Form f7("f7", -1, 1); // should print an error
-        // Form f8("f8", 1, -1); // should print an error
         std::cout << std::endl;
 
         std::cout << "Form name : " << f1.getName()

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,7 +15,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
     private :
         const std::string _name;
@@ -24,11 +24,11 @@ class Form
         const int _requiredGradeToExecute;
     
     public :
-        /* Canonical Form */
-        Form(const std::string name, int requiredGradeToSign, int requiredGradeToExecute);
-        Form(const Form& other);
-        Form& operator=(const Form& other);
-        ~Form();
+        /* Canonical form */
+        AForm(const std::string name, int requiredGradeToSign, int requiredGradeToExecute);
+        AForm(const AForm& other);
+        AForm& operator=(const AForm& other);
+        ~AForm();
 
         /* Exceptions */
         class GradeTooHighException : public std::exception
@@ -47,6 +47,14 @@ class Form
                     return ("Grade too low");
                 }
         };
+        class NotSignedException : public std::exception
+        {
+            public :
+                virtual const char* what() const throw()
+                {
+                    return ("Form is not signed");
+                }
+        };
 
         /* Getters */
         std::string getName() const;
@@ -56,7 +64,9 @@ class Form
 
         /* Members functions */
         void beSigned(const Bureaucrat& bureaucrat);
+        virtual void execute(Bureaucrat const & excecutor) const = 0; // pure virtual function for abtract class
+        void checkExecution(Bureaucrat const & executor) const;
 
         /* Operator function */
-        friend std::ostream& operator<<(std::ostream& os, const Form& form);
+        friend std::ostream& operator<<(std::ostream& os, const AForm& Aform);
 };
