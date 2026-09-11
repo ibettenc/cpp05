@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 // Constructor
 AForm::AForm(const std::string name, int requiredGradeToSign, int requiredGradeToExecute)
@@ -22,7 +22,7 @@ AForm::AForm(const std::string name, int requiredGradeToSign, int requiredGradeT
         throw GradeTooLowException();
     else
     {
-        std::cout << "AForm : " << name << " has been successfully constructed" << std::endl;
+        std::cout << "Form : " << name << " has been successfully constructed" << std::endl;
     }
 }
 
@@ -30,13 +30,13 @@ AForm::AForm(const std::string name, int requiredGradeToSign, int requiredGradeT
 AForm::AForm(const AForm& other)
     : _name(other._name), _isSigned(other._isSigned), _requiredGradeToSign(other._requiredGradeToSign), _requiredGradeToExecute(other._requiredGradeToExecute)
 {
-    std::cout << "AForm " << _name << " has been copy-constructed" << std::endl;
+    std::cout << "Form " << _name << " has been copy-constructed" << std::endl;
 }
 
 // Destructor
 AForm::~AForm()
 {
-    std::cout << "AForm : " << _name << " has been destroyed" << std::endl;
+    std::cout << "Form : " << _name << " has been destroyed" << std::endl;
 }
 
 // Assignment Operator
@@ -80,17 +80,12 @@ void AForm::beSigned(const Bureaucrat& bureaucrat)
         throw GradeTooLowException();
 }
 
-void checkExecution(Bureaucrat const & executor) const
+void AForm::checkExecution(Bureaucrat const & executor) const
 {
     if (!_isSigned) 
         throw NotSignedException();
     if (executor.getGrade() >= _requiredGradeToExecute)
         throw GradeTooLowException();
-}
-
-virtual void AForm::execute(Bureaucrat const & excecutor) const = 0
-{
-    // nothing bc it needs to be not instantiable
 }
 
 /* Friend function: operator<< */

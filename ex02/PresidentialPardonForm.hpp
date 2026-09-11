@@ -6,12 +6,13 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:07:58 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/10 19:36:19 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/09/11 13:05:37 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
-#include "AForm.hpp"
+#include <iostream>
+#include "Bureaucrat.hpp"
 
 class PresidentialPardonForm : public AForm
 {
@@ -28,4 +29,4 @@ class PresidentialPardonForm : public AForm
             /* Member functions */
             virtual void execute(Bureaucrat const & executor) const;
             
-}
+};

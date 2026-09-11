@@ -6,45 +6,68 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:08:02 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/10 19:35:03 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/09/11 13:50:44 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
-/* Canonical form */
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target) : _target(target)
+/* Constructeur */
+ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target)
+    : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
-    if (this.requiredGradeToSign < 145 && this.requiredGradeToExecute < 137)
-        throw GradeTooLowException();
-    // constructor message
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : _target(target)
+/* Constructeur de copie */
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
+    : AForm(other), _target(other._target)
 {
-    // copy-constructor message
 }
 
+/* Opérateur d'affectation */
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other)
 {
-    if (this != other)
-        this._target = other._target;
+    if (this != &other)
+    {
+        // _target est const, on ne peut pas le modifier.
+    }
     return (*this);
 }
 
+/* Destructeur */
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    // destructor message
 }
 
-virtual void execute(Bureaucrat const & executor) const
+/* Fonction execute */
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    if (!this.getIsSigned()) 
-        throw NotSignedException();
-    if (executor.getGrade() >= this.getGradeToExecute())
-        throw GradeTooLowException();
-    else
+    if (!this->getIsSigned())
+        throw AForm::NotSignedException();
+
+    if (executor.getGrade() > this->getGradeToExecute())
+        throw AForm::GradeTooLowException();
+
+    std::string fileName = this->_target + "_shrubbery";
+    std::ofstream outFile(fileName.c_str());
+
+    if (outFile.is_open())
     {
-        // ShrubberyCreationForm action
+        outFile << "      _._" << std::endl;
+        outFile << "     _-.-'" << std::endl;
+        outFile << "    _-  -._" << std::endl;
+        outFile << "   /  _    -._" << std::endl;
+        outFile << "  /  _  _    -._" << std::endl;
+        outFile << " /   _  _    -._" << std::endl;
+        outFile << "|   _  _    -._" << std::endl;
+        outFile << "|  _  _    -._" << std::endl;
+        outFile << "| _  _    -._" << std::endl;
+        outFile << "|_ _    -._" << std::endl;
+        outFile << "| _    -._" << std::endl;
+        outFile << "|_    -._" << std::endl;
+        outFile << "|_    -._" << std::endl;
+        outFile << "|_    -._" << std::endl;
+        outFile << "|_    -._" << std::endl;
     }
 }

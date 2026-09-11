@@ -64,9 +64,8 @@ class AForm
 
         /* Members functions */
         void beSigned(const Bureaucrat& bureaucrat);
-        virtual void execute(Bureaucrat const & excecutor) const = 0; // pure virtual function for abtract class
         void checkExecution(Bureaucrat const & executor) const;
-
+        virtual void execute(Bureaucrat const & excecutor) const = 0; // pure virtual function for abtract class
         /* Operator function */
         friend std::ostream& operator<<(std::ostream& os, const AForm& Aform);
 };

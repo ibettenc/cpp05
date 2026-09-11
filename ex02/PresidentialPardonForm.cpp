@@ -6,45 +6,45 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:07:53 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/10 19:37:32 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/09/11 13:46:12 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-/* Canonical form */
-PresidentialPardonForm::PresidentialPardonForm(std::string const & target) : _target(target)
+/* Constructeur */
+PresidentialPardonForm::PresidentialPardonForm(std::string const & target)
+    : AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
-    if (this.requiredGradeToSign < 25 && this.requiredGradeToExecute < 5)
-        throw GradeTooLowException();
-    // constructor message
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other) : _target(target)
+/* Constructeur de copie */
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
+    : AForm(other), _target(other._target)
 {
-    // copy-constructor message
 }
 
+/* Opérateur d'affectation */
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other)
 {
-    if (this != other)
-        this._target = other._target;
+    if (this != &other)
+    {
+        // On ne peut pas modifier _target car il est const.
+    }
     return (*this);
 }
 
+/* Destructeur */
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-    // destructor message
 }
 
-virtual void execute(Bureaucrat const & executor) const
+/* Fonction execute */
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-    if (!this.getIsSigned()) 
-        throw NotSignedException();
-    if (executor.getGrade() >= this.getGradeToExecute())
-        throw GradeTooLowException();
-    else
-    {
-        // PresidentialPardonForm action
-    }
+    if (!this->getIsSigned())
+        throw AForm::NotSignedException();
+    if (executor.getGrade() > this->getGradeToExecute())
+        throw AForm::GradeTooLowException();
+    std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

@@ -6,12 +6,12 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:08:06 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/10 19:35:58 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/09/11 13:43:44 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
-#include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 class RobotomyRequestForm : public AForm
 {
@@ -28,4 +28,4 @@ class RobotomyRequestForm : public AForm
             /* Member functions */
             virtual void execute(Bureaucrat const & executor) const;
             
-}
+};
