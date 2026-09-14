@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:07:58 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/11 13:05:37 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/09/14 18:27:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <string>
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm
 {

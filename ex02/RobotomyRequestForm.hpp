@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:08:06 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/11 13:43:44 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/09/14 18:27:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <string>
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm
 {

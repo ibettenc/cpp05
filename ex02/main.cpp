@@ -10,15 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
     try 
     {
-        
-        Bureaucrat b1("Jules", 5);
-        
         //---- OLD TESTS ----//
         // Bureaucrat b2("Bob", 151); // should print an error
         // Bureaucrat b3("Lucia", 0); // should print an error
@@ -40,28 +39,33 @@ int main()
         // std::cout << b4 << std::endl;
 
         //---- NEW TESTS ----//
-        // AForm f1("form1", 5, 5); // should print an error abstract class
-        // AForm f2("form2", 1, 1); // should print an error abstract class
-        // AForm f3("f3", 0, 1); // should print an error
-        // AForm f4("f4", 151, 1); // should print an error
-        // AForm f5("f5", 1, 0); // should print an error
-        // AForm f6("f6", 1, 151); // should print an error
-        // AForm f7("f7", -1, 1); // should print an error
-        // AForm f8("f8", 1, -1); // should print an error
+        Bureaucrat b1("Jules", 5);
+
+        ShrubberyCreationForm shrub("MyGarden");
+        RobotomyRequestForm robot("Target");
+        PresidentialPardonForm pardon("President");
         std::cout << std::endl;
 
-        // std::cout << "Form name : " << f1.getName()
-        //     << ", Signed status : " << f1.getIsSigned()
-        //     << ", Required grade to excecute : " << f1.getGradeToExecute()
-        //     << ", Required grade to sign : " << f1.getGradeToSign()
-        //     << std::endl;
+        // AForm f1("form1", 5, 5); // should not compile : error abstract class
+        // AForm f2("form2", 0, 0); // should not compile : error abstract class
+
+        std::cout << "Forms created : :" << std::endl;
+        std::cout << shrub << std::endl;
+        std::cout << robot << std::endl;
+        std::cout << pardon << std::endl;
         std::cout << std::endl;
 
-        // std::cout << f1 << std::endl; // using the << operator as mentioned in the subject + the signed status should be false
+        
+
+        // using the << operator as mentioned in the subject + the signed status should be false at the creation
+        std::cout << shrub << std::endl;
+        std::cout << robot << std::endl; 
+        std::cout << pardon << std::endl;
         std::cout << std::endl;
 
-        // b1.signAForm(f1);
-        // b1.signAForm(f2); // b1 should fail to sign the Aform 
+
+        // b1.signForm(f1);
+        // b1.signForm(f2); // b1 should fail to sign the Aform 
         std::cout << std::endl;
 
         // std::cout << f1 << std::endl; // the signed status should be true

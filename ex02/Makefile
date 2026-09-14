@@ -13,7 +13,7 @@
 ###################################################
 ## ARGUMENTS
 
-NAME = Bureaucrat_but_better
+NAME = bureaucrat_but_even_better
 
 CC = c++
 
