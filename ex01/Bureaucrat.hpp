@@ -42,7 +42,7 @@ public:
                 return ("Grade too low");
             }
     };
-    friend std::ostream& operator<<(std:: ostream& os, const Bureaucrat& b);
+    
     
     /* Getters */
     std::string getName() const;
@@ -54,3 +54,5 @@ public:
     void signForm(Form& form);
     
 };
+
+std::ostream& operator<<(std:: ostream& os, const Bureaucrat& b);

@@ -41,10 +41,12 @@ public:
                 return ("Grade too low");
             }
     };
-    friend std::ostream& operator<<(std:: ostream& os, const Bureaucrat& b);
+    
     std::string getName() const;
     int getGrade() const;
     void increase();
     void decrease();
     
 };
+
+std::ostream& operator<<(std:: ostream& os, const Bureaucrat& b);

@@ -43,7 +43,7 @@ Bureaucrat::~Bureaucrat()
 
 std::ostream& operator<<(std:: ostream& os, const Bureaucrat& b)
 {
-    os << b.name << " , Bureaucrat grade : " << b.grade;
+    os << b.getName() << " , Bureaucrat grade : " << b.getGrade();
     return (os);
 }
 

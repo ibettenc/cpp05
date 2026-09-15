@@ -13,7 +13,7 @@
 ###################################################
 ## ARGUMENTS
 
-NAME = bureaucrat
+NAME = bureaucrat_prime
 
 CC = c++
 
@@ -23,7 +23,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 ###################################################
 ## SOURCES
 
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJ = $(SRC:.cpp=.o)
 
 ###################################################

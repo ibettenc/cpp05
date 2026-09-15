@@ -57,6 +57,8 @@ class Form
         /* Members functions */
         void beSigned(const Bureaucrat& bureaucrat);
 
-        /* Operator function */
-        friend std::ostream& operator<<(std::ostream& os, const Form& form);
+        
 };
+
+/* Operator function */
+std::ostream& operator<<(std::ostream& os, const Form& form);
