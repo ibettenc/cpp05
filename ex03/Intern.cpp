@@ -6,20 +6,59 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 16:19:04 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/15 16:54:15 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/09/16 16:25:43 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-Intern::AForm* makeForm()
+Intern::Intern()
 {
-    try
+    
+}
+
+Intern::Intern(const Intern &other)
+{
+    (void) other;
+}
+
+Intern Intern::operator=(const Intern &other)
+{
+    (void) other;
+    return *this;
+}
+
+Intern::~Intern()
+{
+    
+}
+
+AForm* Intern::makeForm(std::string const& form_name, std::string const& form_target)
+{
+    int i = 0;
+    std::string forms[] = {"shrubbery creation", "robotomy request", "presidential pardon"};
+    while (i < 3 && forms[i] != form_name)
+        i++;
+    switch(i)
     {
-        
+        case 0 :
+            std::cout << "Intern creates " << form_name << std::endl;
+            return (new ShrubberyCreationForm(form_target));
+        case 1 :
+            std::cout << "Intern creates " << form_name << std::endl;
+            return (new RobotomyRequestForm(form_target));
+        case 2 :
+            std::cout << "Intern creates " << form_name << std::endl;
+            return (new PresidentialPardonForm(form_target));
+        default :
+            std::cout << "makeForm Error: wrong name" << std::endl;
+            throw WrongNameException();
     }
-    catch ()
-    {
-        
-    }
+
+    return 0;
 }

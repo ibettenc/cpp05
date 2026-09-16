@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -93,19 +94,35 @@ int main()
         // Fail to execute forms
         b2.executeForm(shrub);
         b2.executeForm(robot);
-        b2.executeForm(pardon);
-        
-
-        // b1.signForm(f1);
-        // b1.signForm(f2); // b1 should fail to sign the Aform 
+        b2.executeForm(pardon);        
         std::cout << std::endl;
 
-        // std::cout << f1 << std::endl; // the signed status should be true
-        std::cout << std::endl;
+        Intern randomIntern;
+        AForm* form_ptr = NULL;
+        try
+        {
+            form_ptr = randomIntern.makeForm("shrubbery creation", "random shrub");
+            // std::cout << form_ptr << std::endl; comment les afficher ?
+            std::cout << std::endl;
+            form_ptr = randomIntern.makeForm("robotomy request", "random robot");
+            // std::cout << form_ptr << std::endl; comment les afficher ?
+            std::cout << std::endl;
+            form_ptr = randomIntern.makeForm("presidential pardon", "random begging");
+            // std::cout << form_ptr << std::endl; comment les afficher ?
+            std::cout << std::endl;
+            
+            delete form_ptr;
+            form_ptr = NULL;
+            
+        }
+        catch (std::exception& e)
+        {
+            std::cout << "Global Error: " << e.what() << std::endl;
+        }
     }
     catch (std::exception& e)
     {
-        std::cout << "Global Error : " <<  e.what() << std::endl;
+        std::cout << "Global Error: " <<  e.what() << std::endl;
     }
     
     return 0;

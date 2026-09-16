@@ -22,7 +22,7 @@ AForm::AForm(const std::string name, int requiredGradeToSign, int requiredGradeT
         throw GradeTooLowException();
     else
     {
-        std::cout << "Form " << name << " has been successfully constructed" << std::endl;
+        std::cout << name << " has been successfully constructed" << std::endl;
     }
 }
 
@@ -30,7 +30,7 @@ AForm::AForm(const std::string name, int requiredGradeToSign, int requiredGradeT
 AForm::AForm(const AForm& other)
     : _name(other._name), _isSigned(other._isSigned), _requiredGradeToSign(other._requiredGradeToSign), _requiredGradeToExecute(other._requiredGradeToExecute)
 {
-    std::cout << "Form " << _name << " has been copy-constructed" << std::endl;
+    std::cout << _name << " has been copy-constructed" << std::endl;
 }
 
 // Destructor

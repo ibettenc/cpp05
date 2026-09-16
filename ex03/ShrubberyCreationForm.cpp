@@ -6,7 +6,7 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:08:02 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/15 15:32:32 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/09/16 16:20:20 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target)
     : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
+    std::cout << getName() << " has been successfully constructed" << std::endl;
 }
 
 /* Constructeur de copie */
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
     : AForm(other), _target(other._target)
 {
+    std::cout << getName() << " has been successfully copy-constructed" << std::endl;
 }
 
 /* Opérateur d'affectation */

@@ -13,7 +13,6 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
@@ -30,7 +29,7 @@ class AForm
         AForm(const std::string name, int requiredGradeToSign, int requiredGradeToExecute);
         AForm(const AForm& other);
         AForm& operator=(const AForm& other);
-        ~AForm();
+        virtual ~AForm();
 
         /* Exceptions */
         class GradeTooHighException : public std::exception
