@@ -49,8 +49,8 @@ public:
     int getGrade() const;
 
     /* Member functions */
-    void increase();
-    void decrease();
+    void increment();
+    void decrement();
     void signForm(AForm& form);
     void executeForm(AForm const & form);
     

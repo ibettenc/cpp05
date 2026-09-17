@@ -6,7 +6,7 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 16:19:04 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/16 16:25:43 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/09/17 17:14:38 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ AForm* Intern::makeForm(std::string const& form_name, std::string const& form_ta
             std::cout << "Intern creates " << form_name << std::endl;
             return (new PresidentialPardonForm(form_target));
         default :
-            std::cout << "makeForm Error: wrong name" << std::endl;
+            std::cout << "Target " << form_name << " is not a valid form name" << std::endl;
             throw WrongNameException();
     }
 

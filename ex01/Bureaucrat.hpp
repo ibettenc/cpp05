@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include <iostream>
 #include <string>
 #include <exception>
@@ -49,10 +50,10 @@ public:
     int getGrade() const;
 
     /* Member functions */
-    void increase();
-    void decrease();
+    void increment();
+    void decrement();
     void signForm(Form& form);
     
 };
 
-std::ostream& operator<<(std:: ostream& os, const Bureaucrat& b);
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

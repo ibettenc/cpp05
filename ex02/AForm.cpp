@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 // Constructor
 AForm::AForm(const std::string name, int requiredGradeToSign, int requiredGradeToExecute)
@@ -20,10 +20,6 @@ AForm::AForm(const std::string name, int requiredGradeToSign, int requiredGradeT
         throw GradeTooHighException();
     else if (requiredGradeToSign > 150 || requiredGradeToExecute > 150)
         throw GradeTooLowException();
-    else
-    {
-        std::cout << "Form " << name << " has been successfully constructed" << std::endl;
-    }
 }
 
 // Copy Constructor
@@ -36,7 +32,6 @@ AForm::AForm(const AForm& other)
 // Destructor
 AForm::~AForm()
 {
-    std::cout << _name << " has been destroyed" << std::endl;
 }
 
 // Assignment Operator
@@ -84,7 +79,7 @@ void AForm::checkExecution(Bureaucrat const & executor) const
 {
     if (!_isSigned) 
         throw NotSignedException();
-    if (executor.getGrade() >= _requiredGradeToExecute)
+    if (executor.getGrade() > _requiredGradeToExecute)
         throw GradeTooLowException();
 }
 

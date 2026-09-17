@@ -30,11 +30,11 @@ int main()
         // std::cout << std::endl;
 
 
-        // // b3.increase(); // should print an error
-        // b3.decrease();
+        // // b3.increment(); // should print an error
+        // b3.decrement();
         // std::cout << b3 << std::endl;
 
-        // b4.increase();
+        // b4.increment();
         // std::cout << b4 << std::endl;
 
         //----- NEW TESTS -----//
@@ -42,10 +42,10 @@ int main()
         Form f2("form2", 1, 1);
         std::cout << std::endl;
 
-        std::cout << "Form name : " << f1.getName()
-            << ", Signed status : " << f1.getIsSigned()
-            << ", Required grade to excecute : " << f1.getGradeToExecute()
-            << ", Required grade to sign : " << f1.getGradeToSign()
+        std::cout << "Form name: " << f1.getName()
+            << ", Signed status: " << f1.getIsSigned()
+            << ", Required grade to excecute: " << f1.getGradeToExecute()
+            << ", Required grade to sign: " << f1.getGradeToSign()
             << std::endl;
         std::cout << std::endl;
 

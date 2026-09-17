@@ -14,7 +14,8 @@
 #include <iostream>
 #include <string>
 #include <exception>
-#include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat
 {
@@ -49,8 +50,8 @@ public:
     int getGrade() const;
 
     /* Member functions */
-    void increase();
-    void decrease();
+    void increment();
+    void decrement();
     void signForm(AForm& form);
     void executeForm(AForm const & form);
     

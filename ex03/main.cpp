@@ -39,11 +39,11 @@ int main()
         // std::cout << std::endl;
 
 
-        // // b3.increase(); // should print an error
-        // b3.decrease();
+        // // b3.increment(); // should print an error
+        // b3.decrement();
         // std::cout << b3 << std::endl;
 
-        // b4.increase();
+        // b4.increment();
         // std::cout << b4 << std::endl;
 
         //---- NEW TESTS ----//
@@ -98,26 +98,49 @@ int main()
         std::cout << std::endl;
 
         Intern randomIntern;
-        AForm* form_ptr = NULL;
+        AForm* form1 = NULL;
+        AForm* form2 = NULL;
+        AForm* form3 = NULL;
+        AForm* wrong_form = NULL;
         try
         {
-            form_ptr = randomIntern.makeForm("shrubbery creation", "random shrub");
-            // std::cout << form_ptr << std::endl; comment les afficher ?
+            form1 = randomIntern.makeForm("shrubbery creation", "random shrub");
+            std::cout << *form1 << std::endl;
             std::cout << std::endl;
-            form_ptr = randomIntern.makeForm("robotomy request", "random robot");
-            // std::cout << form_ptr << std::endl; comment les afficher ?
+
+            form2 = randomIntern.makeForm("robotomy request", "random robot");
+            std::cout << *form2 << std::endl;
             std::cout << std::endl;
-            form_ptr = randomIntern.makeForm("presidential pardon", "random begging");
-            // std::cout << form_ptr << std::endl; comment les afficher ?
+
+            form3 = randomIntern.makeForm("presidential pardon", "random begging");
+            std::cout << *form3 << std::endl;
+            std::cout << std::endl;
+
+            wrong_form = randomIntern.makeForm("bla bla bla", "random wrong");
+            std::cout << *wrong_form << std::endl;
             std::cout << std::endl;
             
-            delete form_ptr;
-            form_ptr = NULL;
+            delete form1;
+            delete form2;
+            delete form3;
+            delete wrong_form;
+            form1 = NULL;
+            form2 = NULL;
+            form3 = NULL;
+            wrong_form = NULL;
             
         }
         catch (std::exception& e)
         {
             std::cout << "Global Error: " << e.what() << std::endl;
+            delete form1;
+            delete form2;
+            delete form3;
+            delete wrong_form;
+            form1 = NULL;
+            form2 = NULL;
+            form3 = NULL;
+            wrong_form = NULL;
         }
     }
     catch (std::exception& e)

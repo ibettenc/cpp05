@@ -6,7 +6,7 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:07:53 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/16 16:20:03 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/09/17 15:31:33 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@
 PresidentialPardonForm::PresidentialPardonForm(std::string const & target)
     : AForm("PresidentialPardonForm", 25, 5), _target(target)
 {
-    std::cout << getName() << " has been successfully constructed" << std::endl;
 }
 
 /* Constructeur de copie */
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
     : AForm(other), _target(other._target)
 {
-    std::cout << getName() << " has been successfully copy-constructed" << std::endl;
 }
 
 /* Opérateur d'affectation */

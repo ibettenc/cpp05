@@ -6,7 +6,7 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:08:00 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/16 16:35:18 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/09/17 17:06:33 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,12 @@
 RobotomyRequestForm::RobotomyRequestForm(std::string const & target)
     : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
-    std::cout << getName() << "has been successfully constructed" << std::endl;
 }
 
 /* Copy-constructor */
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other)
     : AForm(other), _target(other._target)
 {
-    std::cout << getName() << "has been successfully copy-constructed" << std::endl;
 }
 
 /* Assignment operator */
@@ -57,7 +55,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 
     int result = rand() % 2;
     if (result == 1)
-        std::cout << getName() << " Robotomy succeed" << std::endl;
+        std::cout << this->_target << " has been robotomized successfully" << std::endl;
     else
-        std::cout << getName() << " Robotomy failed" << std::endl;
+        std::cout << this->_target << " has been robotomized failed" << std::endl;
 }

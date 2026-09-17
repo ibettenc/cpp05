@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 // Constructor
 Form::Form(const std::string name, int requiredGradeToSign, int requiredGradeToExecute)
@@ -20,10 +21,6 @@ Form::Form(const std::string name, int requiredGradeToSign, int requiredGradeToE
         throw GradeTooHighException();
     else if (requiredGradeToSign > 150 || requiredGradeToExecute > 150)
         throw GradeTooLowException();
-    else
-    {
-        std::cout << "Form : " << name << " has been successfully constructed" << std::endl;
-    }
 }
 
 // Copy Constructor
@@ -36,7 +33,6 @@ Form::Form(const Form& other)
 // Destructor
 Form::~Form()
 {
-    std::cout << "Form : " << _name << " has been destroyed" << std::endl;
 }
 
 // Assignment Operator
@@ -83,7 +79,7 @@ void Form::beSigned(const Bureaucrat& bureaucrat)
 /* Friend function: operator<< */
 std::ostream& operator<<(std::ostream& os, const Form& form)
 {
-    os << "Form " << form.getName() 
+    os << form.getName() 
        << ", signed status: " << (form.getIsSigned() ? "true" : "false") 
        << ", required sign grade: " << form.getGradeToSign() 
        << ", required exec grade: " << form.getGradeToExecute();

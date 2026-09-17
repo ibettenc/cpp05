@@ -28,11 +28,11 @@ int main()
         std::cout << std::endl;
 
 
-        // b3.increase(); // it prints an error
-        b3.decrease();
+        // b3.increment(); // it prints an error
+        b3.decrement();
         std::cout << b3 << std::endl;
 
-        b4.increase();
+        b4.increment();
         std::cout << b4 << std::endl;
 
         std::cout << std::endl;

@@ -44,9 +44,9 @@ public:
     
     std::string getName() const;
     int getGrade() const;
-    void increase();
-    void decrease();
+    void increment();
+    void decrement();
     
 };
 
-std::ostream& operator<<(std:: ostream& os, const Bureaucrat& b);
+std::ostream& operator<<(std::ostream& os, const Bureaucrat& b);

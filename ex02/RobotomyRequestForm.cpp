@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:08:00 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/14 18:26:52 by marvin           ###   ########.fr       */
+/*   Updated: 2026/09/17 17:07:36 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
     if (executor.getGrade() > this->getGradeToExecute())
         throw AForm::GradeTooLowException();
 
-    std::cout << "Brrrrr brrrrr, you hear some drilling noise.. (the subject forced me.. -_-)" << std::endl;
+    std::cout << "Brrrrr brrrrr " << std::endl;
 
     int result = rand() % 2;
     if (result == 1)
         std::cout << this->_target << " has been robotomized successfully" << std::endl;
     else
-        std::cout << "Robotomy failed" << std::endl;
+        std::cout << this->_target << " has been robotomized failed" << std::endl;
 }
