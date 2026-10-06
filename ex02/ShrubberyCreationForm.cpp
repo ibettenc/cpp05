@@ -6,7 +6,7 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:08:02 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/15 15:32:32 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/10/06 16:01:42 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         outFile << " /      \\ " << std::endl;
         outFile << " --------" << std::endl;
         outFile << "   |_|" << std::endl;
+    }
+    else
+    {
+        std::cout << "Error: Wrong or missing file" << std::endl;
     }
 }

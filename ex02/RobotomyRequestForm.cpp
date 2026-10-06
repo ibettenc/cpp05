@@ -6,7 +6,7 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:08:00 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/17 17:07:36 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/10/06 15:57:07 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
     if (result == 1)
         std::cout << this->_target << " has been robotomized successfully" << std::endl;
     else
-        std::cout << this->_target << " has been robotomized failed" << std::endl;
+        std::cout << this->_target << " has failed to be robotomized" << std::endl;
 }

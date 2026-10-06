@@ -10,10 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
+
 #include <iostream>
 #include <string>
 #include <exception>
+#include "AForm.hpp"
 
 class AForm;
 
@@ -53,8 +56,10 @@ public:
     void increment();
     void decrement();
     void signForm(AForm& form);
-    void executeForm(AForm const & form);
+    void executeForm(AForm const & form) const;
     
 };
 
 std::ostream& operator<<(std:: ostream& os, const Bureaucrat& b);
+
+#endif

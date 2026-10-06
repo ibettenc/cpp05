@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:08:03 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/14 18:27:42 by marvin           ###   ########.fr       */
+/*   Updated: 2026/10/06 15:51:44 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
+
 #include <string>
 #include <iostream>
 #include "Bureaucrat.hpp"
@@ -32,3 +34,5 @@ class ShrubberyCreationForm : public AForm
             virtual void execute(Bureaucrat const & executor) const;
             
 };
+
+#endif

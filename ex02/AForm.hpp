@@ -10,7 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+
+#ifndef AFORM_HPP
+#define AFORM_HPP
+
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
@@ -30,7 +33,7 @@ class AForm
         AForm(const std::string name, int requiredGradeToSign, int requiredGradeToExecute);
         AForm(const AForm& other);
         AForm& operator=(const AForm& other);
-        ~AForm();
+        virtual ~AForm();
 
         /* Exceptions */
         class GradeTooHighException : public std::exception
@@ -73,3 +76,5 @@ class AForm
 
 /* Operator function */
 std::ostream& operator<<(std::ostream& os, const AForm& Aform);
+
+#endif
