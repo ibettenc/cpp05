@@ -40,6 +40,8 @@ int main()
         //----- NEW TESTS -----//
         Form f1("form1", 5, 5);
         Form f2("form2", 1, 1);
+        // Form f3("form3" , 151, 1); // should print an error
+        // Form f4("form4" , 0, 1); // should print an error
         std::cout << std::endl;
 
         std::cout << "Form name: " << f1.getName()

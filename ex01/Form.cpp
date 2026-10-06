@@ -76,7 +76,7 @@ void Form::beSigned(const Bureaucrat& bureaucrat)
         throw GradeTooLowException();
 }
 
-/* Friend function: operator<< */
+/* Function: operator<< */
 std::ostream& operator<<(std::ostream& os, const Form& form)
 {
     os << form.getName() 

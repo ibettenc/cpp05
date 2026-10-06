@@ -22,7 +22,6 @@ Bureaucrat::Bureaucrat(std::string const n, int g) : name(n), grade(g)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other) : name(other.name), grade(other.grade)
 {
-    std::cout << "Bureaucrat " << name << " has been copy-constructed" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)

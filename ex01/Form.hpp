@@ -10,9 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef FORM_HPP
+#define FORM_HPP
+
 #include <iostream>
 #include <string>
+#include <exception>
 
 class Bureaucrat;
 
@@ -63,3 +66,5 @@ class Form
 
 /* Operator function */
 std::ostream& operator<<(std::ostream& os, const Form& form);
+
+#endif
