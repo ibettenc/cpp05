@@ -6,11 +6,13 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 16:18:57 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/17 17:15:01 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/10/13 16:41:30 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef INTERN_HPP
+#define INTERN_HPP
+
 #include <string>
 
 class AForm;
@@ -35,3 +37,5 @@ class Intern
         AForm* makeForm(std::string const& form_name, std::string const& form_target);
         
 };
+
+#endif

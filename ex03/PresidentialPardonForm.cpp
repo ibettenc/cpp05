@@ -6,7 +6,7 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:07:53 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/17 15:31:33 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/10/13 16:54:36 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,6 @@ PresidentialPardonForm::~PresidentialPardonForm()
 /* Fonction execute */
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-    if (!this->getIsSigned())
-        throw AForm::NotSignedException();
-    if (executor.getGrade() > this->getGradeToExecute())
-        throw AForm::GradeTooLowException();
+    checkExecution(executor);
     std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

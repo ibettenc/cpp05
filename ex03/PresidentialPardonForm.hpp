@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:07:58 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/14 18:27:29 by marvin           ###   ########.fr       */
+/*   Updated: 2026/10/13 16:41:54 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
+
 #include <string>
 #include <iostream>
 #include "Bureaucrat.hpp"
@@ -32,3 +34,5 @@ class PresidentialPardonForm : public AForm
             virtual void execute(Bureaucrat const & executor) const;
             
 };
+
+#endif

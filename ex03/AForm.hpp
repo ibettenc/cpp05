@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#ifndef AFORM_HPP
+#define AFORM_HPP
+
 #include <iostream>
 #include <string>
 
@@ -72,3 +74,5 @@ class AForm
 
 /* Operator function */
 std::ostream& operator<<(std::ostream& os, const AForm& Aform);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/10 19:08:02 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/17 15:31:20 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/10/13 17:50:34 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 /* Fonction execute */
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-    if (!this->getIsSigned())
-        throw AForm::NotSignedException();
-
-    if (executor.getGrade() > this->getGradeToExecute())
-        throw AForm::GradeTooLowException();
+    checkExecution(executor);
 
     std::string fileName = this->_target + "_shrubbery";
     std::ofstream outFile(fileName.c_str());
@@ -60,5 +56,9 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         outFile << " /      \\ " << std::endl;
         outFile << " --------" << std::endl;
         outFile << "   |_|" << std::endl;
+    }
+    else
+    {
+        std::cout << "Error : file opening failed" << std::endl;
     }
 }
