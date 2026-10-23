@@ -40,7 +40,7 @@ AForm& AForm::operator=(const AForm& other)
     if (this != &other)
     {
         // Only non-const members can be assigned
-        _isSigned = other._isSigned;
+        AForm::operator=(other);
     }
     return (*this);
 }

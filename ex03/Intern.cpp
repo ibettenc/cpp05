@@ -6,7 +6,7 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 16:19:04 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/09/17 17:14:38 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/10/23 13:56:31 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ Intern::Intern()
     
 }
 
-Intern::Intern(const Intern &other)
+Intern::Intern(const Intern& other)
 {
     (void) other;
 }
 
-Intern Intern::operator=(const Intern &other)
+Intern& Intern::operator=(const Intern& other)
 {
     (void) other;
     return *this;

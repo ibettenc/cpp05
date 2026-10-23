@@ -50,6 +50,9 @@ int main()
         Bureaucrat b1("Jules", 5);
         Bureaucrat b2("Alex", 150);
 
+        std::cout << b1 << std::endl;
+        std::cout << b2 << std::endl;
+
         ShrubberyCreationForm shrub("MyGarden");
         RobotomyRequestForm robot("Target");
         PresidentialPardonForm pardon("President");

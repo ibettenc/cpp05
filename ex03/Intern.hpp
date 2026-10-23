@@ -6,7 +6,7 @@
 /*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 16:18:57 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/10/13 16:41:30 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/10/23 13:49:22 by ibettenc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Intern
         
     public :
         Intern();
-        Intern(const Intern &other);
-        Intern operator=(const Intern &other);
+        Intern(const Intern& other);
+        Intern& operator=(const Intern& other);
         ~Intern();
         class WrongNameException : public std::exception
         {
