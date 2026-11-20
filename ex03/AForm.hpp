@@ -13,6 +13,7 @@
 #ifndef AFORM_HPP
 #define AFORM_HPP
 
+#include <exception>
 #include <iostream>
 #include <string>
 

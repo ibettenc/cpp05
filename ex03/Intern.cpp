@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 16:19:04 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/10/23 13:56:31 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/11/03 15:59:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,6 @@ AForm* Intern::makeForm(std::string const& form_name, std::string const& form_ta
             std::cout << "Intern creates " << form_name << std::endl;
             return (new PresidentialPardonForm(form_target));
         default :
-            std::cout << "Target " << form_name << " is not a valid form name" << std::endl;
             throw WrongNameException();
     }
-
-    return 0;
 }

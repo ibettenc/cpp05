@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibettenc <ibettenc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 16:18:57 by ibettenc          #+#    #+#             */
-/*   Updated: 2026/10/23 13:49:22 by ibettenc         ###   ########.fr       */
+/*   Updated: 2026/11/03 15:59:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef INTERN_HPP
 #define INTERN_HPP
 
+#include <exception>
 #include <string>
 
 class AForm;
